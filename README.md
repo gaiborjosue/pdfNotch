@@ -41,6 +41,18 @@ npm run build
 npm run preview
 ```
 
+## 🐳 Docker
+
+```bash
+# Build Docker image
+docker build -t pdfnotch-frontend .
+
+# Run container
+docker run -p 3000:3000 pdfnotch-frontend
+
+# Access at http://localhost:3000
+```
+
 ## 📦 Key Components
 
 - **MacNotch** - Interactive macOS-style notch component
