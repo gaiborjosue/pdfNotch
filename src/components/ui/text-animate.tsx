@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import type { FC, ComponentProps } from "react"
-import { motion, useAnimation, useInView } from "motion/react"
+import { motion } from "motion/react"
 
 type AnimationType =
   | "fadeIn"
@@ -207,14 +207,9 @@ const TextAnimate: FC<Props> = ({
   //   });
 
   const ref = useRef(null)
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const _isInView = useInView(ref, { once: true })
 
   const letters = Array.from(text)
   const { container, child } = animationVariants[type]
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const _ctrls = useAnimation()
 
   //   useEffect(() => {
   //     if (isInView) {
