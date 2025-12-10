@@ -21,11 +21,6 @@ import { GradientHeading } from "@/components/ui/gradient-heading"
 import { TextureButton } from "@/components/ui/texture-button"
 import { TextAnimate } from "@/components/ui/text-animate"
 import { GradientAnimation } from "@/components/ui/bg-animated-gradient"
-import {
-  MinimalCard,
-  MinimalCardTitle,
-  MinimalCardDescription,
-} from "@/components/ui/minimal-card"
 import { MacNotch } from "@/components/MacNotch"
 import { PrivacyPolicy } from "@/components/PrivacyPolicy"
 import { ContactPage } from "@/components/ContactPage"

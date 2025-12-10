@@ -1,4 +1,5 @@
-import { FC, useRef, ComponentProps } from "react"
+import { useRef } from "react"
+import type { FC, ComponentProps } from "react"
 import { motion, useAnimation, useInView } from "motion/react"
 
 type AnimationType =
@@ -206,12 +207,14 @@ const TextAnimate: FC<Props> = ({
   //   });
 
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const _isInView = useInView(ref, { once: true })
 
   const letters = Array.from(text)
   const { container, child } = animationVariants[type]
 
-  const ctrls = useAnimation()
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const _ctrls = useAnimation()
 
   //   useEffect(() => {
   //     if (isInView) {

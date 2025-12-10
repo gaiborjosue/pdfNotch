@@ -1,6 +1,5 @@
-import React, {
+import {
   createContext,
-  ReactNode,
   useCallback,
   useContext,
   useEffect,
@@ -8,6 +7,7 @@ import React, {
   useRef,
   useState,
 } from "react"
+import type { ReactNode } from "react"
 // Image import removed - using regular img tag for Vite
 import { Maximize, Minimize, Pause, Play, Volume2, VolumeX } from "lucide-react"
 import { AnimatePresence, motion } from "motion/react"
@@ -118,7 +118,7 @@ function debounce<T extends (...args: any[]) => any>(
   (...args: Parameters<T>): void
   cancel: () => void
 } {
-  let timeoutId: NodeJS.Timeout | null = null
+  let timeoutId: ReturnType<typeof setTimeout> | null = null
 
   const debouncedFn = (...args: Parameters<T>) => {
     if (timeoutId) clearTimeout(timeoutId)
@@ -168,6 +168,7 @@ const HoverVideoPlayer: React.FC<HoverVideoPlayerProps> = ({
   restartOnPaused = false,
   unloadVideoOnPaused = false,
   playbackRangeStart,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   playbackRangeEnd,
   muted: initialMuted = false,
   loop = true,
@@ -179,13 +180,16 @@ const HoverVideoPlayer: React.FC<HoverVideoPlayerProps> = ({
   enableControls = false,
   cropTop = 0,
   cropBottom = 0,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   isVimeo = false,
 }) => {
   // Refs for DOM elements and timing
   const containerRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
-  const playbackTimeoutRef = useRef<NodeJS.Timeout | null>(null)
-  const lastPlayAttemptRef = useRef<number>(0)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const _playbackTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const _lastPlayAttemptRef = useRef<number>(0)
 
   // Consolidated state management
   const [state, setState] = useState<VideoPlayerState>({
@@ -454,7 +458,7 @@ const HoverVideoPlayer: React.FC<HoverVideoPlayerProps> = ({
       return
     }
 
-    let playbackTimeout: NodeJS.Timeout | undefined
+    let playbackTimeout: ReturnType<typeof setTimeout> | undefined
 
     if (state.isMobile) {
       if (state.controlsVisible) {

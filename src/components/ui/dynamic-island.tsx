@@ -1,6 +1,5 @@
-import React, {
+import {
   createContext,
-  ReactNode,
   useCallback,
   useContext,
   useEffect,
@@ -8,6 +7,7 @@ import React, {
   useRef,
   useState,
 } from "react"
+import type { ReactNode } from "react"
 import { AnimatePresence, motion, useWillChange } from "motion/react"
 
 const stiffness = 400
