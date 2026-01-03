@@ -365,10 +365,12 @@ function App() {
             transition={{ duration: 0.6, delay: 1 }}
             className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 px-4"
           >
-            <TextureButton variant="primary" size="lg" className="w-full sm:w-auto">
-              <Apple className="h-5 w-5 mr-2" />
-              Download on Mac App Store
-            </TextureButton>
+            <a href="https://apps.apple.com/us/app/pdf-notch/id6756340729?mt=12" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <TextureButton variant="primary" size="lg" className="w-full sm:w-auto">
+                <Apple className="h-5 w-5 mr-2" />
+                Download on Mac App Store
+              </TextureButton>
+            </a>
             <TextureButton 
               variant="minimal" 
               size="lg" 
@@ -583,10 +585,12 @@ function App() {
             Download PDF Notch today and experience the fastest way to handle
             PDFs on your Mac.
           </p>
-          <TextureButton variant="primary" size="lg">
-            <Apple className="h-5 w-5 mr-2" />
-            Download on Mac App Store
-          </TextureButton>
+          <a href="https://apps.apple.com/us/app/pdf-notch/id6756340729?mt=12" target="_blank" rel="noopener noreferrer" className="inline-block">
+            <TextureButton variant="primary" size="lg">
+              <Apple className="h-5 w-5 mr-2" />
+              Download on Mac App Store
+            </TextureButton>
+          </a>
           <p className="text-sm text-neutral-400 dark:text-neutral-500 mt-4">
             Requires macOS 14.0 or later
           </p>
